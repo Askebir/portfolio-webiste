@@ -1,7 +1,43 @@
+import { NavLinks } from "@/constant/constatn";
+import Link from "next/link";
 import React from "react";
+import { CgClose } from "react-icons/cg";
 
-const MobileNav = () => {
-  return <div>MobileNav</div>;
+type Props = {
+  showNav: boolean;
+  closeNav: () => void;
+};
+
+const MobileNav = ({ showNav, closeNav }: Props) => {
+  const navOpen = showNav ? "translate-x-0" : "translate-x-[100]";
+
+  return (
+    <div>
+      {/* ovelay */}
+      <div
+        className={`fixed inset-0 ${navOpen} transform transition-all right-0 duration-500 z-10002 bg-black opacity-70 w-full h-screen  `}
+      ></div>
+      {/* navlink */}
+
+      <div
+        className={`text-white ${navOpen}  border fixed border-white  justify-center  flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] bg-cyan-800 space-y-6 z-10050 right-0  `}
+      >
+        {NavLinks.map((link) => (
+          <Link key={link.id} href={link.url}>
+            <p className="text-white w-fit text-xl ml-12 border-b-[1.5px] pb-1 border-white sm:text-[30px]">
+              {" "}
+              {link.lable}
+            </p>
+          </Link>
+        ))}
+        {/* cross icon */}
+        <CgClose
+          onClick={closeNav}
+          className=" absolute top-5 right-4 cursor-pointer text-xl sm:w-8 sm:h-8 w-6 h-6 "
+        />
+      </div>
+    </div>
+  );
 };
 
 export default MobileNav;

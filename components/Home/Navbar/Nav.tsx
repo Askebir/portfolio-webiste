@@ -1,12 +1,32 @@
+"use client";
+
 import { NavLinks } from "@/constant/constatn";
 import Link from "next/link";
-import React from "react";
+import { useEffect, useState } from "react";
 import { BiDownload } from "react-icons/bi";
 import { FaCode } from "react-icons/fa";
+import { HiBars3BottomRight } from "react-icons/hi2";
 
-const Nav = () => {
+type Props = {
+  openNav: () => void;
+};
+
+const Nav = ({ openNav }: Props) => {
+  const [navBg, setNavBg] = useState(false);
+
+  useEffect(() => {
+    const handler = () => {
+      if (window.scrollY >= 90) setNavBg(true);
+      if (window.scrollY < 90) setNavBg(false);
+    };
+
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
   return (
-    <div className=" border border-white transition-all duration-200 h-[12vh] z-1000 fixed w-full">
+    <div
+      className={`border border-white ${navBg ? "bg-[#0f142ed9] shadow-md " : "fixed"}  transition-all duration-200 h-[12vh] z-1000 fixed w-full`}
+    >
       <div className="flex items-center justify-between h-full w-[90%] border border-white mx-auto">
         {/* LOGO */}
         <div className="flex items-center space-x-2">
@@ -37,6 +57,11 @@ const Nav = () => {
           <BiDownload className="w-5 h-5" />
           <span>DownLoad CV</span>
         </div>
+        {/* Burger menu */}
+        <HiBars3BottomRight
+          onClick={openNav}
+          className="w-8 h-8 cursor-pointer text-white lg:hidden"
+        />
       </div>
     </div>
   );
