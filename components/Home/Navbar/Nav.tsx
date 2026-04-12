@@ -51,7 +51,7 @@ const Nav = ({ openNav }: Props) => {
         </div>
         {/* download button */}
         <div
-          className="border border-amber-300 px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-blue-800 hover:bg-blue-900
+          className="border lg md:hidden  border-amber-300 px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-blue-800 hover:bg-blue-900
          transition-all flex items-center space-x-2 duration-100 "
         >
           <BiDownload className="w-5 h-5" />
