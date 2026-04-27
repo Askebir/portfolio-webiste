@@ -10,19 +10,19 @@ const Blog = () => {
       <div className="w-[70%] mx-auto grid grid-cols-1 xl:grid-cols-3 xl:gap-4 gap-10 items-center mt-16">
         <div>
           <BlogCard
-            image="/image/b1.jpg"
+            image="/images/b1.jpg"
             title="Learn how to build an amezing portfolio website using next js"
           />
         </div>
         <div>
           <BlogCard
-            image="/image/b2.jpg"
+            image="/images/b2.jpg"
             title="Learn how to build an amezing Blog website using next js"
           />
         </div>
         <div>
           <BlogCard
-            image="/image/b3.jpg"
+            image="/images/b3.jpg"
             title="Learn how to build an amezing Social Media website using next js"
           />
         </div>
