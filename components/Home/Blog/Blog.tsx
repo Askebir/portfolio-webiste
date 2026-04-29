@@ -8,19 +8,31 @@ const Blog = () => {
         My latest <span className="text-cyan-200">Blog</span>
       </h1>
       <div className="w-[70%] mx-auto grid grid-cols-1 xl:grid-cols-3 xl:gap-4 gap-10 items-center mt-16">
-        <div>
+        <div
+          data-aos="fade-right"
+          data-aos-anchor-placement="top-center"
+          data-aos-delay="0"
+        >
           <BlogCard
             image="/images/b1.jpg"
             title="Learn how to build an amezing portfolio website using next js"
           />
         </div>
-        <div>
+        <div
+          data-aos="fade-right"
+          data-aos-anchor-placement="top-center"
+          data-aos-delay="100"
+        >
           <BlogCard
             image="/images/b2.jpg"
             title="Learn how to build an amezing Blog website using next js"
           />
         </div>
-        <div>
+        <div
+          data-aos="fade-right"
+          data-aos-anchor-placement="top-center"
+          data-aos-delay="200"
+        >
           <BlogCard
             image="/images/b3.jpg"
             title="Learn how to build an amezing Social Media website using next js"

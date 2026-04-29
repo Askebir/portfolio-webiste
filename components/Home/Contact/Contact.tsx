@@ -7,7 +7,11 @@ const Contact = () => {
     <div className="pt-16 pb-16">
       <div className="w-[90%] md:w-[80%] lg:w-[70%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ">
         {/* text content */}
-        <div>
+        <div
+          data-aos="fade-right"
+          data-aos-anchor-placement="top-center"
+          data-aos-delay="0"
+        >
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-200">
             Schedule a call with me to see if I can help
           </h1>
@@ -50,7 +54,12 @@ const Contact = () => {
           </div>
         </div>
         {/* form */}
-        <div className="md:p-10 p-4 bg-[#131332] rounded-lg">
+        <div
+          data-aos="zoom-in"
+          data-aos-anchor-placement="top-center"
+          data-aos-delay="0"
+          className="md:p-10 p-4 bg-[#131332] rounded-lg"
+        >
           <input
             type="text"
             className="px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70 "
